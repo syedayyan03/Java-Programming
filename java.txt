@@ -1,0 +1,1193 @@
+Java inputs
+____________
+1. Scanner class is used to take input from the user
+   Syntax = Scanner obj_name = new Scanner(System.in);
+2. To input an integer use nextInt(), for string use nextLine() for paragraphs with spaces, next() for single word without spaces, for double use nextDouble()
+   Ex - import java.util.*;
+	public class Main
+	{
+		public static void main(String[] args) {
+	    		Scanner aa= new Scanner(System.in); //to take inputs.
+	    		int a = aa.nextInt(); // integer input.
+	    		double d= aa.nextDouble();// double input.
+	    		aa.nextLine(); // Dummy string input as when an integer above is input then the below string will occupy the space,
+				          which is left after the input and we cannot input string.
+	    		String str = aa.nextLine();// String input may contain paragraphs and spaces in text.
+	    		String strin = aa.next();// String input only one word without any spaces.
+	    		System.out.print(a);
+	    		System.out.print(d);
+	    		System.out.print(str);
+	    		System.out.print(strin);
+			        or
+			System.out.print(a+d+str+strin); // Prints the data inputed from the user.
+	    
+		}
+        }
+_____________________________________________________________________________________________________________________________________________________________________________
+Java Arrays
+___________
+
+Syntax- datatype[] array_name = new datatype[size];
+	Ex- import java.util.*;
+	    public class Main
+	    {
+		public static void main(String[] args) {
+	    		Scanner aa= new Scanner(System.in);
+	    		int n = aa.nextInt();
+	    		int[] arr = new int[n];//Array declaration. 
+	    		for (int i=0; i<n; i++){
+	        		arr[i]= aa.nextInt();
+	    		}
+	    		for (int i=0; i<n; i++){							(or)   //Instead of this type of Output we can write as below.
+	        		System.out.print(arr[i]+ " ");// Prints an array in a single line.		for(int i:arr){ // we can directly assign i value as arr[i].
+	    		}				      // don't use '' as it will add ASCII value of ''.		System.out.println(i); 
+		}												}
+            }
+______________________________________________________________________________________________________________________________________________________________________________
+Java Operators
+__________________
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    int a =7, b=0, c;
+	    --a;
+	    a--;
+	    ++b;
+	    c= a^b;// ^ it is xor operator
+	    System.out.print(c);
+	}
+}
+Formula for left shift x<<y x*(2^y) here ^ is power and right shift is x>>y is x/(2^y)
+--The below code gives an error as |error: incompatible types: int cannot be converted to boolean| because only in java int is int and cannot be converted to boolean values.
+	    int a =5;
+	    if(a){
+	        System.out.print("hi");
+	    }
+	    else{
+	        System.out.print("Hello");
+	    }
+Reversing a number
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    int a =234, re=0;
+	    while(a!=0){
+	        re = re*10 + (a%10);
+	        a = a/10;
+	    }
+	    System.out.print(re);//Output - 432
+	}
+    }
+
+________________________________________________________________________________________________________________________________________________________________________________
+
+Java switch case
+________________
+
+Syntax:
+	switch(condition)
+	{
+	   case{match1}:
+		statement-1;
+		break;
+	   case{match2}:
+		statement-2;
+		break;
+	   case{match3}:
+		statement-3;
+		break;
+		.
+		.
+		.
+	   case{matchn}:
+		statement-n;
+		break;
+	   default:
+		statement-x;
+		break;
+
+	}
+
+Example: import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+        Scanner s1 = new Scanner(System.in);
+        int cases = s1.nextInt();
+        switch (cases){
+            case 1:
+                System.out.println("One");
+                break;
+            case 2:
+                System.out.println("Two");
+                break;
+            case 3:
+                System.out.println("Three");
+            case 4:
+                System.out.println("Four");
+                break;
+            case 5:
+                System.out.println("Five");
+                break;
+            case 6:
+                System.out.println("Six");
+                break;
+            case 7:
+                System.out.println("Seven");
+                break;
+            case 8:
+                System.out.println("Eight");
+                break;
+            case 9:
+                System.out.println("Nine");
+                break;
+            case 0:
+                System.out.println("Zero");
+                break;
+            default:
+                System.out.println("please enter single digit number");
+                break;
+            }
+    }
+}
+__________________________________________________________________________________________________________________________________________________________________________________
+
+Java Conditional statements
+___________________________
+
+>> This is used to implement the code according to the given condition
+
+Syntax: if(condition1){
+	   statement-1;
+	}
+	else if(condition2){
+	   statement-2;
+	}
+		.
+		.
+		.
+	else if(condition-n){
+	   statement-n;
+	}
+	else{
+	   statement-x;
+	}
+
+Example:
+	import java.util.*;
+public class Index {
+    public static void main(String args[]){
+        Scanner s1 = new Scanner(System.in);
+        int mark = s1.nextInt();
+        String output = percentage(mark);
+    }
+    static String percentage(int marks){
+        if(marks>=0 && marks<=100){
+            if(marks >= 36 && marks <= 50)
+                return "F";
+            else if(marks>=51 && marks<=60)
+                return "D";
+            else if(marks>=61 && marks<=70)
+                return "C";
+            else if(marks>=71 && marks<=80)
+                return "B";
+            else if(marks>=81 && marks<=90)
+                return "A"; 
+            else if(marks>=91 && marks<=100)
+                return "Fail";           
+        }
+        else{
+            return "Error";
+        }
+
+    }
+}
+_____________________________________________________________________________________________________________________________________________________________________________
+
+
+IMPORTANT QUESTIONS
+1.
+public class TestClass {
+  public static String checkVowelConsonant (String letter) {  // Don't change the number of parameters
+      // Please write your return statement here
+      char ch = letter.charAt(0); // This is used to convert string into characters
+      if(Character.isLetter(ch)){
+          if(ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U')
+            return "Vowel";
+          else
+            return "Consonant";
+      }
+      else
+        return "Other";
+  }
+
+  //Please don't modify the below code
+
+  public static void main (String[] args) {
+      System.out.print(checkVowelConsonant(args[0]));
+  } 
+}
+________________________________________________________________________________________________________________________________________________________________________________
+
+Java Loops
+__________
+
+>> loops are used to repeat specific part of the code repeatedly for multiple times according to the conditions.
+
+1. "for" loop: 
+	Syntax: for(condition){
+			statement;
+		}
+2. Nested "for" loop:
+	Syntax: for(condition){
+		   for(condition){
+			statement;
+		   }
+		}
+		
+>> Important Questions
+
+i. print * in the order *****
+			*****
+Code: public class sample {
+    public static void main(String[] args) {
+        for(int i=0; i<2; i++){
+            for(int j=0; j<2; j++){
+                System.out.print("*");
+            }
+            System.out.print("\n");
+        }
+    }
+}
+
+ii. print * in order *
+		     **
+		     ***
+Code:public class sample {
+    public static void main(String[] args) {
+        for(int i=0; i<3; i++){
+            for(int j=0; j<=3; j++){
+                System.out.print("*");
+            }
+            System.out.print("\n");
+        }
+    }
+}
+
+iii. print * in order ***
+		      **
+		      *
+Code: public class sample {
+    public static void main(String[] args) {
+        for(int i=0; i<3; i++){
+            for(int j=0; j<3-i; j++){
+                System.out.print("*");
+            }
+            System.out.print("\n");
+        }
+    }
+}
+
+iv. print * in order *
+   		    **
+  		   ***
+Code: public class sample {
+    public static void main(String[] args) {
+        for(int i=0; i<3; i++){
+            for(int j=0; j<3-i-1; j++){
+                System.out.print(" ");
+            }
+            for(int k=0; k<i+1; k++){
+                System.out.print("*");
+            }
+            System.out.print("\n");
+        }
+    }
+}
+
+v. print * in order ***
+		     **
+		      *
+Code: public class sample {
+    public static void main(String[] args) {
+        for(int i=0; i<3; i++){
+            for(int j=0; j<i; j++){
+                System.out.print(" ");
+            }
+            for(int k=0; k<3-i; k++){
+                System.out.print("*");
+            }
+            System.out.print("\n");
+        }
+    }
+}
+
+
+vi. print * in order  *
+		     * *
+		    * * *
+Code: public class sample {
+    public static void main(String[] args) {
+        for(int i=0; i<3; i++){
+            for(int j=0; j<3-i-1; j++){
+                System.out.print(" ");
+            }
+            for(int k=0; k<i+1; k++){
+                System.out.print("* ");// here gap will make more difference.
+            }
+            System.out.print("\n");
+        }
+    }
+}
+
+vii. print * in order * * *
+		       * *
+		        *
+Code: public class sample {
+    public static void main(String[] args) {
+        for(int i=0; i<3; i++){
+            for(int j=0; j<i; j++){
+                System.out.print(" ");
+            }
+            for(int k=0; k<n-i; k++){
+                System.out.print("* ");
+            }
+            System.out.print("\n");
+        }
+    }
+}
+
+viii. print * in order ____*____
+		       ___***___
+		       __*****__
+Code: public class sample {
+    public static void main(String[] args) {
+        for(int i=0; i<3; i++){
+            for(int j=0; j<3-i-1; j++){
+                System.out.print("_");
+            }
+            for(int k=0; k<(2*i)+1; k++){
+                System.out.print("*");
+            }
+            for(int k=0; k<3-i-1; k++){
+                System.out.print("_");
+            }
+            System.out.print("\n");
+        }
+    }
+}
+
+ix. print output in the form 1  without using nested for loop.
+			     22
+			     333
+Code: Method-1
+	public class sample {
+    	public static void main(String[] args) {
+        	int x = 1;
+        	for(int i=1; i<=5; i++){
+            		System.out.println(x*i);
+            		x += Math.pow(10, i);
+       		 }
+    	}
+	}
+	
+	Method-2
+	public class sample {
+    public static void main(String[] args) {
+        int x = 1;
+        for(int i=1; i<=5; i++){
+            x += sop(Math.pow(10, i)/9;
+        }
+    }
+}
+
+x. print output in the form  * * * * *
+			     *       *
+			     *       *
+			     *       *
+			     * * * * *
+Code: public class sample {
+    public static void main(String[] args) {
+        int n = 5;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (i == 0 || j == 0 || i == n - 1 || j == n - 1) {
+                    System.out.print("* ");
+                } 
+                else {
+                    System.out.print("  "); 
+                }
+            }
+            System.out.println(); 
+        }
+    }
+}
+
+
+xi. print output in the form * * * * *
+			     * 1 2 3 *
+			     * 4 5 6 *
+			     * 7 8 9 *
+			     * * * * *
+Code: public class sample {
+    public static void main(String[] args) {
+        int n = 5, c=1;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (i == 0 || j == 0 || i == n - 1 || j == n - 1) {
+                    System.out.print("* ");
+                } 
+                else {
+                    System.out.print(c+ " "); 
+                    c += 1;
+                }
+            }
+            System.out.println(); 
+        }
+    }
+}
+
+xii. print output in the form *****1*****
+			      ****1 2****
+			      ***1 2 3***
+			      **1 2 3 4**
+   			      *1 2 3 4 5*
+
+Code: public class printloop {
+    public static void main(String[] args) {
+        for (int i = 1; i <= 5; i++) {
+            for (int j = 5; j >= i; j--) {
+                System.out.print("*");
+            }
+            for (int j = 1; j <= i; j++) {
+                System.out.print(j);
+                if (j < i) {
+                    System.out.print(" ");
+                }
+            }
+            for (int j = 5; j >= i; j--) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
+
+xiii. print output in the form  a
+   			       aba
+  			      abcba
+ 			     abcdcba
+			    abcdedcba
+Code: public class printloop {
+    public static void main(String[] args) {
+        for(int i=0; i<5; i++){
+            for(int j=0; j<5-i-1; j++){
+                System.out.print(" ");
+            }
+            for(int k=0; k<2*i+1; k++){
+                if(k<=i)
+                    System.out.print((char) ('a' + k) + "");
+                else
+                    System.out.print((char) ('a'+ (2*i-k)) + "");
+            }
+            System.out.print("\n");
+        }
+    }
+}
+
+xiv. print output in the form * * * * * * 
+			      * $ $ $ $ *
+			      * $     $ *
+			      * $     $ *
+			      * $ $ $ $ *
+			      * * * * * *
+Code: public class printloop1 {
+    public static void main(String[] args) {
+        for(int i=0; i<6; i++){
+            for(int j = 0; j<6; j++){
+                if(i == 0 || i == 5 ||j == 0 || j == 5){
+                    System.out.print("* ");
+                }
+                else if(i==1 || i==4 || j == 1 || j== 4){
+                    System.out.print("$ ");
+                }
+                else{
+                    System.out.print("  ");
+                }
+            }
+            System.out.println();
+        }
+    }
+}
+
+xv. print output in the form 3 3 3 3 3 
+			     3 2 2 2 3
+			     3 2 1 2 3
+			     3 2 2 2 3
+			     3 3 3 3 3
+Code: import java.util.*;
+public class printloop1 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        for(int i=0; i<(2*n)-1; i++){
+            for(int j = 0; j<(2*n)-1; j++){
+                if((i+j)<2*n-1){
+                    System.out.print(n-Math.min(i,j)+" ");
+                }
+                else{
+                    System.out.print(Math.max(i,j) - (n-2) + " ");
+                }
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+
+
+3. while loop
+_____________
+
+Syntax: while(condition){
+	   statement;
+	}
+
+Example:
+i. sum of even digits of a number.
+Code: import java.util.*;
+public class sample {
+    public static void main(String[] args) {
+        Scanner s1 = new Scanner(System.in);
+        int n= s1.nextInt();
+        int rev, result= 0;
+        int i = 5;
+        while(n != 0){
+            rev = n %10;
+            n= n/10;
+	    if(rev % 2 == 0 {
+            	result += rev
+            }
+        }
+        System.out.println(result);
+    }
+}
+
+ii. Output for a loop 6^5+2^4+7^3+4^2+5^1 value
+Code: import java.util.*;
+public class sample {
+    public static void main(String[] args) {
+        Scanner s1 = new Scanner(System.in);
+        int n= s1.nextInt();
+        int rev, result= 0;
+        int i = 1;
+        while(n != 0){
+            rev = n %10;
+            n= n/10;
+            result += Math.pow(rev, i);
+            i += 1;
+        }
+        System.out.println(result);
+    }
+}
+
+
+iii. Output for a loop 6^1+2^2+7^3+4^4+5^5 value
+Code:import java.util.*;
+public class sample {
+    public static void main(String[] args) {
+        Scanner s1 = new Scanner(System.in);
+        int n= s1.nextInt();
+        int rev, result= 0, m=n;
+        int i= 0;
+        while(m != 0){
+            i++;
+            m = m/10;
+        }
+        while(n != 0){
+            rev = n %10;
+            n= n/10;
+            result += Math.pow(rev, i);
+            i -= 1;
+        }
+        System.out.println(result);
+    }
+}
+
+iv. Palindrome or not.
+Code:import java.util.*;
+public class sample {
+    public static void main(String[] args) {
+        Scanner s1 = new Scanner(System.in);
+        String str = s1.nextLine();
+        int length= str.length();
+        int i=0, j= length-1, count = 0;
+        while(i < j){
+            if(str.charAt(i) == str.charAt(j)){
+                i++;
+                j--;
+                count = 1;
+            }
+            else{
+                System.out.println("not a Palindrome");
+                break;
+            }
+        }
+        if(count == 1){
+            System.out.println("Palindrome");
+        }
+
+    }
+}
+
+Note: To round off in java you can use Math.floor method to round the number to 13.567 to 13.0
+Example: n= 12.456;
+	 double result = Math.floor(n);
+	 
+
+Note: To return "," separated values in java we can return like 
+Example: x = 10;
+	 String result = " ";
+	 for(int i=0; i<=x; i++){
+		if(i % 2 != 0){
+		   result += i + ","; // This is for the string to be returned using java.
+		}
+	 }
+	if(result.length() > 1){ 
+	    result= result.substring(0, result.length()-1); // This is used to remove last "," from the result string.
+	}
+	
+	return result; // Output:- 1,3,5,7,9
+___________________________________________________________________________________________________________________________________________________________________________
+
+Inbuilt Array Funtions
+----------------------
+
+1. length: it is used to find the length of the array.
+    Syntax: arrayname.length;
+    Ex: arr.length;
+
+2. Arrays.toString(): It is used to get entire Array 
+    Syntax: Arrays.toString(arrayname);
+    Ex: import java.util.Arrays;
+
+public class arrays {
+    public static void main(String[] args) {
+	    		int[] arr = {5,2,9,8,3}; 
+                int[] arr1 = arr;
+                arr1[0] = 100;
+                System.out.println(arr[0]);
+                System.out.println(Arrays.toString(arr));
+                System.out.println(arr1[0]);
+		}												
+    }
+
+
+	
+
+3. Arrays.copyOf(,): It is used to make copy of the existing array without interference of older array.
+    Syntax:  new_array = Arrays.copyOf(old_array, old_array.length);
+    Ex: import java.util.Arrays;
+public class arrays {
+    public static void main(String[] args) {
+	    		int[] arr = {5,2,9,8,3}; 
+                int[] arr1 = arr;
+                arr1[0] = 100;
+                System.out.println(arr[0]);
+                System.out.println(Arrays.copyOf(arr, arr.length));
+                System.out.println(arr1[0]);
+		}												
+    }
+
+Note: if we put arr1 = arr it means the address of new array arr1 and old array arr are same and if one change in any array will effect in another array. To avoid this we use as above. 
+
+4. Arrays.copyOfRange(,,): It will copy any specific range of values from older array to new array.
+    Syntax: new_array = Arrays.copyOf(old_array, start, end);
+    Ex: import java.util.Arrays;
+public class arrays {
+    public static void main(String[] args) {
+	    		int[] arr = {5,2,9,8,3}; 
+                int[] arr1 = arr;
+                arr1[0] = 100;
+                System.out.println(arr[0]);
+                System.out.println(Arrays.copyOfRange(arr, 1, 4));
+                for(int i=0; i<arr1.length; i++){
+                    System.out.println(arr1[i]); 
+                }
+                
+		}												
+    }
+
+5. Arrays.sort(): It is used to sort the array in ascending order.
+     Syntax: Arrays.sort(arrayname);
+     Ex: import java.util.Arrays;
+public class arrays {
+    public static void main(String[] args) {
+	    		int[] arr = {5,2,9,8,3}; 
+			Arrays.sort(arr);
+			System.out.println(Array.toString(arr));
+                
+		}												
+    }
+
+Note: There is no function to directly reverse the array instead we use for loop to do so.
+Ex: import java.util.Arrays;
+public class arrays {
+    public static void main(String[] args) {
+	    		int[] arr = {5,2,9,8,3}; 
+			Arrays.sort(arr);
+			for(int i=0; i<arr.length/2; i++){
+			    int t=arr[i];
+			    arr[i] = arr[arr.length-i-1];
+			    arr[arr.length-i-1] = t;
+			}
+			System.out.println(Arrays.toString(arr));
+                
+		}												
+    }
+
+Note: The default values for the array is 0 without intialization and by just declaration.If I want to initialize the array with custom value it can be done as below.
+Syntax: Arrays.fill(arrayname, valuefordefault);
+Ex: import java.util.Arrays;
+public class arrays {
+    public static void main(String[] args) {
+	    		int[] arr = new int[5]; 
+                Arrays.fill(arr, -1);
+			System.out.println(Arrays.toString(arr));
+                
+		}												
+    }
+
+
+
+
+6. Arrays.binarySearch(arrayname): It is used to binary search the array and the array must be sorted.
+Syntax:- 
+______________________________________________________________________________________________________________________________________________________________________________
+
+2D Array
+--------
+
+=> Array having rows and columns(Matrix).
+
+Syntax:- declaration of 2D arrays
+	 int arr[][] = new int[n][m];
+
+Example:- import java.util.*;
+public class arrys2D {
+  public static void main(String[] args) {
+    int n, m;
+    Scanner sc = new Scanner(System.in);
+    n = sc.nextInt();
+    m = sc.nextInt();
+    int arr[][] = new int[n][m];
+    for(int i=0; i<n; i++){
+      for(int j=0; j<m; j++){
+        arr[i][j] = sc.nextInt();
+      }
+    }
+    for(int i=0; i<n; i++){
+      for(int j=0; j<m; j++){
+        if(j < m-1)
+          System.out.print(arr[i][j] + " ");
+        else
+          System.out.print(arr[i][j]);
+      }
+      System.out.println();
+    }
+  }
+}
+
+#Output:- 1 1
+	  1 1
+
+Transpose Matrix
+
+Code:- import java.util.*;
+public class arrys2D {
+  public static void main(String[] args) {
+    int n;
+    Scanner sc = new Scanner(System.in);
+    n = sc.nextInt();
+    int arr[][] = new int[n][n];
+    for(int i=0; i<n; i++){
+      for(int j=0; j<n; j++){
+        arr[i][j] = sc.nextInt();
+      }
+    }
+    // for(int i=0; i<n; i++){
+    for(int i=0; i<n-1; i++){
+      int t;
+      for(int j=i+1; j<n; j++){
+          t = arr[i][j];
+          arr[i][j] = arr[j][i];
+          arr[j][i] = t; 
+      }
+    }
+
+    for(int i=0; i<n; i++){
+      for(int j=0; j<n; j++){
+        System.out.print(arr[i][j] + " ");
+      }
+      System.out.println();
+    }
+  }
+}
+
+=> non-principal diagonal in matrix 
+Code:- import java.util.*;
+public class arrys2D {
+  public static void main(String[] args) {
+    int n;
+    Scanner sc = new Scanner(System.in);
+    n = sc.nextInt();
+    int arr[][] = new int[n][n];
+    int sum = 0;
+    for(int i=0; i<n; i++){
+      for(int j=0; j<n; j++){
+        arr[i][j] = sc.nextInt();
+      }
+    }
+
+    for(int i=0; i<n; i++){
+        if(arr[i][n-1-i] % 2 ==0){
+          sum += arr[i][n-i-1];
+        }
+    }
+    System.out.println(sum);
+  }
+}
+
+ 
+Code:- code for maximum of three principle diagonal, upper triangle and lower triangle in matrix
+import java.util.*;
+public class arrys2D {
+  public static void main(String[] args) {
+    int n;
+    Scanner sc = new Scanner(System.in);
+    n = sc.nextInt();
+    int arr[][] = new int[n][n];
+    int sum_diag = 0;
+    int sum_upper = 0;
+    int sum_lower = 0;
+    for(int i=0; i<n; i++){
+      for(int j=0; j<n; j++){
+        arr[i][j] = sc.nextInt();
+      }
+    }
+
+    for(int i=0; i<n; i++){
+      for(int j=0; j<n; j++){
+        if(i == j){
+          sum_diag += arr[i][j];
+        }
+        else if(i>j){
+          sum_lower += arr[i][j];
+        }
+        else{
+          sum_upper += arr[i][j];
+        }
+      }
+    }
+    // if(sum_diag > sum_lower && sum_diag > sum_upper){
+    //   System.out.println(sum_diag);
+    // }
+    // else if(sum_lower > sum_diag && sum_lower > sum_upper){
+    //   System.out.println(sum_lower);
+    // }
+    // else{
+    //   System.out.println(sum_upper);
+    // }
+    int max_of_three = Math.max(Math.max(sum_diag, sum_lower), sum_upper);
+    System.out.println(max_of_three);
+  }
+}
+
+2D Array Rotations:-
+import java.util.*;
+public class arrys2D {
+  public static void main(String[] args) {
+    int n;
+    Scanner sc = new Scanner(System.in);
+    n = sc.nextInt();
+    int rotations = sc.nextInt();
+    int arr[] = new int[n];
+    int arr2[] = new int[n];
+    for(int i=0; i<n; i++){
+      arr[i] = sc.nextInt();
+    }
+    int k=0;
+    for(int i=n-rotations; i<n; i++){
+      arr2[k++] = arr[i]; 
+    }
+    for(int i=0; i<n-k; i++){
+      arr2[k++] = arr[i]; 
+    }
+  }
+}
+
+Output:- 
+
+_____________________________________________________________________________________________________________________________________________________________________________
+
+Java Strings
+------------
+=> Strings are immutable.
+
+Declaring String
+----------------
+Syntax: 
+   String string_name = new String(); This will assign different memory for the same String.
+              (or)
+   String string_name; This will provide same memory for the same String.
+              (or)
+   StringBuilder string_name = new StringBuilder("Sting");
+ 
+Inputing The String
+-------------------
+
+1. nextLine:- It takes the string having more than one word like sentences and paragraphs.
+Ex:- Scanner sc = new Scanner(System.in);
+     String s = sc.nextLine();
+
+2. next:- It takes the string having only single word it doesn't have any spaces in the string.
+Ex:- Scanner sc = new Scanner(System.in);
+     String s = sc.next();
+
+String Functions
+----------------
+
+1. toUpperCase:- It converts the entire string to capital letters.
+Syntax:- string_name.toUpperCase();
+Ex:- Scanner sc = new Scanner(System.in);
+     s = sc.nextLine();  
+     System.out.println("Returned Upper Case String: "+ s.toUpperCase());
+
+2. toLowerCase:- It converts the entire string to small letters.
+Syntax:- string_name.toLowerCase();
+Ex:- Scanner sc = new Scanner(System.in);
+     s = sc.nextLine();  
+     System.out.println("Returned Upper Case String: "+ s.toLowerCase());
+
+3. charAt:- It is used to get the character which is present in the specific index.
+Syntax:- string_name.charAt(index);
+Ex:- Scanner sc = new Scanner(System.in);
+     s = sc.nextLine();  
+     System.out.println("Char is specific: "+ s.charAt(2));
+
+4. indexOf(It looks the character from starting of string):- It is used to get the index which is present in the specific character.
+Syntax:- string_name.indexOf('character');
+Ex:- Scanner sc = new Scanner(System.in);
+     s = sc.nextLine(); 
+     System.out.println("Index for specific char: "+ s.indexOf("e"));
+
+5. lastIndexOf(It looks the character from ending of the string):- It is used to get the index which is present in the specific character from end.
+Syntax:- string_name.lastIndexOf('character');
+Ex:- Scanner sc = new Scanner(System.in);
+     s = sc.nextLine();
+     System.out.println("Last index of: "+ s.lastIndexOf("a"));
+
+6. replace:- It is used to replace the character from the string but it will not permanantly change the string instead it will create another string which will replace the character
+Syntax:- string_name.replace('old_string_char', 'new_string_char');
+Ex:- Scanner sc = new Scanner(System.in);
+     s = sc.nextLine();
+     System.out.println("Replacing String: "+ s.replace('a', 'c'));
+
+7. equals:- It is used to compare two string whether they are same or not it will return false if any case issue is there in two strings.
+Syntax:- string_name_1.equals(string_name_2);
+Ex:- Scanner sc = new Scanner(System.in);
+     s = sc.nextLine();
+     s1 = sc.nextLine();
+     System.out.println("Requal or not String: "+ s.equals(s1)); Returns true if both strings are same else false
+
+8. equalsIgnoreCase:- It is used to compare two string whether they are same or not without any cases comparision.
+Syntax:- string_name_1.equalsIgnoreCase(string_name_2);
+Ex:- Scanner sc = new Scanner(System.in);
+     s = sc.nextLine();
+     s1 = sc.nextLine();
+     System.out.println("Requaling String: "+ s.equalsIgnoreCase(s1)); if suppose s = Hello and s1 = hello it will return true only as both strings are same unless cases.
+
+9. trim:- It is used to remove the unwanted part of the string like spaces in the string.
+Syntax:- string_name.trim();
+Ex:- String s2= "     hello     ";
+     System.out.println(s2.trim()); Removes unwanted space in the string.
+
+10. split:- It is used to split the string and convert it to the array
+Syntax:= string_name.split();
+Ex:= String s2 = "hey all how are you?";
+     System.out.println(Arrays.toString(s2.split(" ")));
+     Output:- [hey, all, how, are, you?]
+
+StringBuilder class:- // It is not primitive data type, the changes are made in the original string which saves the space.
+	StringBuilder string_name = new StringBuilder("String");
+	import java.util.*;
+	public class string_builders {
+  	public static void main(String[] args) {
+    		StringBuilder str = new StringBuilder("hello");
+    		System.out.println(str); // Output:- hello
+    		System.out.println(str.append("123")); // Output:- hello123
+    		System.out.println(str.insert(5,"how are you?")); // Output:- Stinghow are you?123
+    		System.out.println(str.reverse()); // Output:- 321?uoy era woholleh
+  		}	
+	}
+
+--------------------***---------------------***-----------------------***--------------------***---------------------***---------------------***----------------***---------
+										Project 
+				
+1. Password Checker(Valid/Invalid):
+
+import java.util.*;
+
+public class password {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the password");
+        String password = sc.nextLine();
+
+        if (password.length() < 8) {
+            System.out.println("Invalid – must be at least 8 characters");
+        } else {
+            int upper = 0, lower = 0, digit = 0, special = 0;
+            boolean hasSpace = false;
+
+            int i = 0;
+            while (i < password.length()) {
+                char ch = password.charAt(i);
+
+                if (Character.isUpperCase(ch)) {
+                    upper++;
+                } else if (Character.isLowerCase(ch)) {
+                    lower++;
+                } else if (Character.isDigit(ch)) {
+                    digit++;
+                } else if (Character.isWhitespace(ch)) {
+                    hasSpace = true; 
+                } else {
+                    special++;
+                }
+                i++;
+            }
+
+            if (hasSpace) {
+                System.out.println("Invalid - password must not contain spaces");
+            } else if (upper >= 1 && lower >= 1 && digit >= 1 && special >= 1) {
+                System.out.println("Valid");
+            } else {
+                System.out.println("Invalid - must contain at least one uppercase, lowercase, digit, and special character");
+            }
+        }
+    }
+}
+
+
+Sample Outputs:- Enter the password:
+		 abcdefgh
+		 Invalid - must contain at least one uppercase, lowercase, digit, and special character
+
+		 Enter the password:
+		 Abcd123!
+		 Valid
+
+		 Enter the password:
+		 Abcd!2
+		 Invalid – must be at least 8 characters
+
+		 Enter the password:
+		 Syed 123
+		 Invalid - password must not contain spaces
+
+2. String Reversing Tool:
+
+import java.util.*;
+
+public class Reverse {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String str = sc.nextLine();
+
+        // Using StringBuilder for easy reversal
+        String reversed = new StringBuilder(str).reverse().toString();
+
+        System.out.println("Reversed string: " + reversed);
+    }
+}
+
+Sample Output:- Enter a string: 
+		 Syed Ayyan
+		 Reversed string: nayyA deyS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
